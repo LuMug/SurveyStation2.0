@@ -6,7 +6,7 @@
 ## Lavori svolti
 
 
-##### Alessando Colugnat e Luca Ristagno
+##### Alessandro Colugnat e Luca Ristagno
 | **Orario**     | **Lavori svolti** |
 | :------------- | :---------------- |
 | 8:20 - 9:05:    | Abbiamo deciso quale progetto fare con tutta la classe   |
