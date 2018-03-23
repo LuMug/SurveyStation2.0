@@ -11,8 +11,7 @@
 | :------------- | :---------------- |
 | 8:20 - 9:05:    | Abbiamo deciso quale progetto fare con tutta la classe   |
 | 9:05 - 9.15:   |  Abbiamo ricevuto il quaderno dei compiti   |
-| 9:15 - 16:30 :  |    Ci siamo aggregati alla partecipazione della bacheca di Trello che ha creato il nostro docente responsabile (Luca Muggiasca) poi abbiamo scaricato la repository del Sismografo e ci siamo messi a leggere la documentazione di essa.
-Dopo ci siamo messi  a creare il Gantt fare l’analisi del dominio, l’analisi dei costi |
+| 9:15 - 16:30 :  |    Ci siamo aggregati alla partecipazione della bacheca di Trello che ha creato il nostro docente responsabile (Luca Muggiasca) poi abbiamo scaricato la repository del Sismografo e ci siamo messi a leggere la documentazione di essa. Dopo ci siamo messi  a creare il Gantt fare l’analisi del dominio, l’analisi dei costi |
 
 
 
