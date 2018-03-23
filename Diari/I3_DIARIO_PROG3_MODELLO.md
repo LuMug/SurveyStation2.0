@@ -6,7 +6,7 @@
 ## Lavori svolti
 
 
-##### Alessando Colugnat
+##### Alessandro Colugnat
 | **Orario**     | **Lavori svolti** |
 | :------------- | :---------------- |
 |                |    (lavori svolti)   |
