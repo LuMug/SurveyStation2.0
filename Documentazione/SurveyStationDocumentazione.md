@@ -307,3 +307,51 @@ Il codice di Arduino importa tre librerie esterne:
 
 #### Pagina PHP
 Il lavoro che deve fare la pagina PHP è quello di recuperare X, Y e Z dall'URL trasmesso da Arduino. Dopodichè deve connettersi al database "surveystation" e alla tabella "sismografo". La pagina si deve occupare di creare la query e di eseguirla correttamente.
+
+## Implementazione
+
+### Arduino
+
+#### Struttura
+
+#### Codice
+
+#### Pagina PHP
+
+### Database
+
+### Sito Web
+
+#### Struttura di base del sito
+
+#### Dashboard di gestione
+
+#### Modal di visualizzazione
+
+#### Data.php e comunicazione con il grafico
+
+##### Data.php
+
+##### Grafico FLOT
+
+## Test
+
+### Protocollo di test
+
+### Risultati test
+
+### Mancanze/limitazioni conosciute
+
+## Consuntivo
+
+## Conclusioni
+
+### Sviluppi futuri
+
+### Considerazioni personali
+
+## Bibliografia
+
+### Sitografia
+
+## Allegati
