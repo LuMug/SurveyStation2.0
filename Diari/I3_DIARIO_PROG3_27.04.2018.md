@@ -21,9 +21,10 @@
 
 
 ##  Problemi riscontrati e soluzioni adottate
+  Non funziona il database.
 
 
 ##  Punto della situazione rispetto alla pianificazione
-
+  Serve qualche modifica al database
 
 ## Programma di massima per la prossima giornata di lavoro
