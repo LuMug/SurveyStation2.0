@@ -183,7 +183,7 @@ This project it's gave to Alessandro Colugnat and Luca Ristagno for make better 
 
 |Risorsa  |Prezzo                                         |
 |----|------------------------------------------------|
-|**Personale**| 50 CHF/h * 80 h lavoro * 2 = 8000               |
+|**Personale**| 50 CHF/h * 80 h lavoro * 2 = 8000 CHF              |
 
 ### Analisi dei mezzi
 
@@ -196,7 +196,7 @@ This project it's gave to Alessandro Colugnat and Luca Ristagno for make better 
 |1x Veroboard|Utilizzata per saldare i componenti su di essa|
 |7x cavi arduino|Utilizzati per collegare i componenti saldati all'arduino|
 |1x Arduino Ethernet|Utilizzato per trasmettere i valori dell'accelerometro al database e per controllare il led rgb|
-|1x Raspberry pi 2|Utilizzato come webserver e database server|
+|1x Raspberry pi 3|Utilizzato come webserver e database server|
 
 #### Software
 
@@ -308,31 +308,33 @@ Il codice di Arduino importa tre librerie esterne:
 #### Pagina PHP
 Il lavoro che deve fare la pagina PHP è quello di recuperare X, Y e Z dall'URL trasmesso da Arduino. Dopodichè deve connettersi al database "surveystation" e alla tabella "sismografo". La pagina si deve occupare di creare la query e di eseguirla correttamente.
 
-## Implementazione
+## implementazione
 
-### Arduino
+#### Codice di Arduino
+Nel codice di Arduino sono statie aggiunte modifica per quando si prendono i dati, inizialmente quando si posizionava il prodotto doveva essere messo orizzontale al piano per avere una situazione di calma da un terremoto è quando si inclinava risultava che c'era uno scossone, il problema si situava nell'if perchè prima veniva visto lo spostamento senza un confronto dei dati trovati prima. Il codice è stato ristrutturato in modo per far usare l'arduino anche in un piano inclinato:
 
-#### Struttura
+(cxi < (accel.cx + margine) && cxi > (accel.cx - margine)) || (cyi < (accel.cy + margine) && cyi > (accel.cy - margine)) || (czi < (accel.cz + margine) && czi > (accel.cz - margine))
 
-#### Codice
+Questo serve per vedere quando il sismografo sia effetivamente in un caso di terremoto.
+cxi, cyi, czi sono i dati precedentemente calcolati dal sismografo che vengono comparati con i dati trovati nell'istante con un margine per fare in modo che i dati abbiamo un differenziale.
+
+Per esempio:
+
+margine = 0.03;
+
+cxi = 0.06;
+
+accel.cx = 0.08;
+
+In questo caso si entrerà nell'if perchè cxi è diverso da accel.cx più il margine di errore.
+Nel codice di Arduino è stato tolto anche il delay perchè rallentava il programma.
+Qunado il delay è stato tolto il grafico era più fluido perchè non aveva problemi nell'inviare dati, ci sono ancora dei problemi perchè quando arrivano dei dati alti il grafico si blocca per un paio di secondi ma puoi continua a far vedere gli altri dati.
 
 #### Pagina PHP
 
 ### Database
 
 ### Sito Web
-
-#### Struttura di base del sito
-
-#### Dashboard di gestione
-
-#### Modal di visualizzazione
-
-#### Data.php e comunicazione con il grafico
-
-##### Data.php
-
-##### Grafico FLOT
 
 ## Test
 
