@@ -336,7 +336,7 @@ il metodo in php che abbiamo usato è questo: mail(to,subject,message,header)
 
 ### Database
 Nel codice del database era stata applicata una modifica che però aveva danneggiato il database quindi non è stata applicata, il pezzo di codice che avevamo aggiunto era un trigger che serviva a limitare il carico di dati del database nella tabella sismografo, questo era il codice di test che era stato testato sulla macchina di luca in locale:
-![test trigger](Immagini_doc/codice_test_trigger.png)
+![test trigger](Immagini_doc/codice_test_trigger.PNG)
 
 
 ### Sito Web
