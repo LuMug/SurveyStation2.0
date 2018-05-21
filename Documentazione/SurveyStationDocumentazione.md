@@ -355,11 +355,14 @@ Nel codice del database era stata applicata una modifica che però aveva dannegg
 ## Conclusioni
 
 ### Sviluppi futuri
-
+Per questo progetto ci sarebbe da correggere il sito siccome possiede alcuni bug (non del tutto responsive) e poi ci sarebbe da far funzionare la parte delle mail
 ### Considerazioni personali
 
 ## Bibliografia
 
 ### Sitografia
+- https://www.w3schools.com/php/php_ref_mail.asp per il codice php delle mail
+- https://www.w3schools.com/php/func_mysqli_query.asp per le query sql tramite php
+
 
 ## Allegati
