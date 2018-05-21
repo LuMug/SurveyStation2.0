@@ -350,7 +350,7 @@ Nel codice del database era stata applicata una modifica che però aveva dannegg
 ### Mancanze/limitazioni conosciute
 
 ## Consuntivo
-![gantt consuntivo](../GanttConsuntivo.gan)
+![gantt consuntivo](../GanttConsuntivo.PNG)
 
 ## Conclusioni
 
