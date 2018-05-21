@@ -331,8 +331,13 @@ Nel codice di Arduino è stato tolto anche il delay perchè rallentava il progra
 Qunado il delay è stato tolto il grafico era più fluido perchè non aveva problemi nell'inviare dati, ci sono ancora dei problemi perchè quando arrivano dei dati alti il grafico si blocca per un paio di secondi ma puoi continua a far vedere gli altri dati.
 
 #### Pagina PHP
+Nel codice della pagina PHP sono state aggiunte delle modifiche per la parte delle mail anche se con insuccesso, avevamo installato il protocollo ssmpt per poter inviare delle mail in caso di un terremoto e abbiamo creato un if che controlla i valori x, y e z del sismografo e in caso di terremoto mandava una mail a chi aveva confermato l'opzione della notifica tramite mail
+il metodo in php che abbiamo usato è questo: mail(to,subject,message,header)
 
 ### Database
+nel codice del database era stata applicata una modifica che però aveva danneggiato il database quindi non è stata applicata, il pezzo di codice che avevamo aggiunto era un trigger che serviva a limitare il carico di dati del database nella tabella sismografo, questo era il codice di test che era stato testato sulla macchina di luca in locale:
+![schema sito](Immagini_doc/codice_test_trigger.png)
+
 
 ### Sito Web
 
