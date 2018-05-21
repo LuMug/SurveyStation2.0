@@ -340,16 +340,166 @@ Nel codice del database era stata applicata una modifica che però aveva dannegg
 
 
 ### Sito Web
+Nel sito web sono state modifica le descrizione di come si usa il sito, inizialmente nel sito non c'era una descrizione di cosa facesse il sito, quindi per l'utente che lo utilizzava non sapeva quall'era l'utilità del sito, noi abbiamo aggiunto la descrizione di cosa fa il sito. È stata modifica la velocità di mostrazione dei dati nel grafico, ora il grafico fa vedere i dati in maniera più scorrevole, faccendo in modo che l'utente noti i dati in tempo reale.
 
 ## Test
+Per i test abbiamo ripreso i dati dalla documentazione precedentemente fatta dai ragazzi che hanno iniziato questo progetto.
 
 ### Protocollo di test
 
+|Test Case      | TC-001                               |
+|---------------|--------------------------------------|
+|**Nome**       | Ricevimento dati sul server |
+|**Riferimento**| REQ-001                               |
+|**Descrizione**| Verificare che i dati arrivino correttamente. |
+|**Prerequisiti**| - |
+|**Procedura**     | Collegare l'Arduino con il programma a un PC con il software Arduino IDE. Aprire il serial monitor ed analizzare i dati che vengono ricevuti ed inviati. A questo punto collegarsi al database e verificare che arrivino i medesimi dati. |
+|**Risultati attesi** | I valori arrivano correttamente con un ritardo non pesante (può dipendere dal carico della rete). |
+
+<br>
+
+|Test Case      | TC-002                               |
+|---------------|--------------------------------------|
+|**Nome**       | Altri sensori |
+|**Riferimento**| REQ-002                               |
+|**Descrizione**| Verificare la possibilità di aggiungere altri sensori. |
+|**Prerequisiti**| - |
+|**Procedura**     | Sviluppare le pagine di visualizzazione copiando e modificando leggermente quelle del sismografo. Creare una tabella adatta ai dati misurati. Collegare all'Arduino il nuovo sensore, implementare il codice in modo che la scheda riceva i dati, come per il TC-002 verificare che i dati vengano ricevuti ed inviati. Collegarsi al db e verificare la presenza dei dati. Controllare poi le relative pagine per la visualizzazione. |
+|**Risultati attesi** | Il rilevamento e la visualizzazione sono funzionanti. |
+
+<br>
+
+|Test Case      | TC-003                               |
+|---------------|--------------------------------------|
+|**Nome**       | Allarmi e notifiche |
+|**Riferimento**| REQ-004                               |
+|**Descrizione**| Verificare che una scossa venga notificata come previsto. |
+|**Prerequisiti**| TC-001 passato |
+|**Procedura**     | Creare un utente con email conosciuta e accessibile. Agitare l'accelerometro per simulare un terremoto, verificare che il LED passi da verde a rosso. Verificare mentre lo si fa che sulla pagina compaia un allarme, fatto questo accedere all'email e verificare di aver ricevuto l'avviso. A questo punto disabilitare l'opzione in cui si sceglie di ricevere le email, simulare un'altra scossa e verificare di non ricevere ulteriori messaggi di posta. |
+|**Risultati attesi** | Gli avvisi sono presenti sulla pagina, per email arrivano solo se si è selezionata l'opzione. |
+
+<br>
+
+|Test Case      | TC-004                               |
+|---------------|--------------------------------------|
+|**Nome**       | Configurabilità moduli |
+|**Riferimento**| REQ-006, REQ-009                               |
+|**Descrizione**| Verificare di poter configurare i moduli |
+|**Prerequisiti**| TC-005 passato |
+|**Procedura**     | Accedere come utente comune e inserire a mano l'url della dashboard dell'admin (/surveystation/admin). Fatto questo uscire e rientrare con un utente amministratore. Andare sulla propria icona di profilo, cliccare gestione avanzata, modificare un parametro e salvare. Collegarsi al database e visualizzare i dati della tabella configurazione. |
+|**Risultati attesi** | Come utente comune non si riesce a visualizzare la pagina (esce un avviso di permessi). Quando vi si accede come admin si possono modificare i parametri, una volta salvati le modifiche devono essere avvenute sul db. |
+
+<br>
+
+|Test Case      | TC-005                               |
+|---------------|--------------------------------------|
+|**Nome**       | Raccolta dati professionali |
+|**Riferimento**| REQ-007                               |
+|**Descrizione**| Verificare che vengano raccolti e visualizzati dati da piattaforme professionali. |
+|**Prerequisiti**| - |
+|**Procedura**     | Visitare la pagina con il grafico. |
+|**Risultati attesi** | È presente la tabella con i dati raccolti dal SED. |
+
+<br>
+
+|Test Case      | TC-006                               |
+|---------------|--------------------------------------|
+|**Nome**       | Visualizzazione dati |
+|**Riferimento**| REQ-008                               |
+|**Descrizione**| Verificare visualizzazione dei dati. |
+|**Prerequisiti**| - |
+|**Procedura**     | Visitare la pagina con il grafico, verificare che il grafico prosegua, verificare che le date sull'asse X siano corrette. A questo punto andare sotto il grafico e aprire la finestra di un singolo terremoto (cliccare su Apri nella tabella). Verificare che esca un grafico rappresentante quell'evento. |
+|**Risultati attesi** | Il grafico si aggiorna in tempo reale. Aprendo i modal si ottiene un grafico fermo del singolo evento. |
+
+<br>
+
+|Test Case      | TC-007                               |
+|---------------|--------------------------------------|
+|**Nome**       | Moduli |
+|**Riferimento**| REQ-007                               |
+|**Descrizione**| Verificare la presenza di moduli e parametri annessi. |
+|**Prerequisiti**| - |
+|**Procedura**     | Tramite la pagina di amministrazione settare dei parametri facilmente verificabili (ad esempio la soglia di salvataggio), andare poi a verificare il cambio (in questo caso sul database). |
+|**Risultati attesi** | I parametri modificati vanno a modificare il comportamento specifico del sistema. |
+<br>
+
+|Test Case      | TC-008                               |
+|---------------|--------------------------------------|
+|**Nome**       |Dati da sismografo a shake. |
+|**Riferimento**|REQ-003                               |
+|**Descrizione**|Quando si chiama la procedura i dati non più vecchi di un determinato valore vengono inseriti dalla tabelle sismografo nella shake.  |
+|**Prerequisiti**|Bisogna aver creato la tabella sismografo e shake.|
+|**Procedura**     | Si inserisce qualche dato nella tabella sismografo. Si aspettano 2 minuti e si chiama la procedura passandole un Id e come quantitativo dei minuti si inserisce 5.|
+|**Risultati attesi** |Nella tabella shake ci devono essere i dati che ho inserito 2 minuti fa. |
+
+<br>
+
+|Test Case      | TC-009                               |
+|---------------|--------------------------------------|
+|**Nome**       | Individuamento picco di dati.|
+|**Riferimento**|REQ-003                               |
+|**Descrizione**| Quando viene rilevato un dato interessante i dati cominciano ad essere inseriti nella tabella shake. |
+|**Prerequisiti**|Bisogna aver creato la tabella sismografo, shake, configurazione e la procedura storePreviousValues.|
+|**Procedura**     |In sismografo si inseriscono dei valori non interessanti. Successivamente si inserisce un valore interessante e dopo altri dati di cui valore non è importante. |
+|**Risultati attesi** |Nella tabella shake ci devono essere i dati a partire da quando c'è stato il picco. |
+
+<br>
+
+|Test Case      | TC-010                               |
+|---------------|--------------------------------------|
+|**Nome**       | Cancellare dati vecchi.|
+|**Riferimento**|REQ-003                               |
+|**Descrizione**| La procedura, una volta chiamata, deve cancellare i dati più vecchi di un determinato lasso temporale (specificato nel parametro) dalla tabella sismografo. |
+|**Prerequisiti**|Bisogna aver creato la tabella sismografo e configurazione.|
+|**Procedura**     | Si inseriscono dei dati nella tabella sismografo. Se il parametro che specifica dopo quanto tempo eliminare i dati equivale ad 2, si aspettano 2 minuti. Si chiama la procedura deleteOldData.|
+|**Risultati attesi** |Nella tabella sismografo non ci devono più essere dati. |
+
+<br>
+
+|Test Case      | TC-011                               |
+|---------------|--------------------------------------|
+|**Nome**       | Immagazzinare dati ogni minuto.|
+|**Riferimento**|REQ-003                               |
+|**Descrizione**| Tramite un evento, la procedura storePreviousData viene chiamata autonomamente ogni minuto. |
+|**Prerequisiti**|Bisogna aver creato la tabella sismografo, shake e la procedura storePreviousData.|
+|**Procedura**     |Si fa partire l'evento (quando si crea il database). Si inseriscono dei dati in sismografo. |
+|**Risultati attesi** |Dopo un minuto i dati devono essere nella tabella shake. |
+
+<br>
+
+|Test Case      | TC-012                               |
+|---------------|--------------------------------------|
+|**Nome**       | Cancellare dati ogni ora.|
+|**Riferimento**|REQ-003                               |
+|**Descrizione**| Tramite un evento, la procedure deleteOldData viene chiamata autonomamente ogni minuto. |
+|**Prerequisiti**|Bisogna aver creato la tabella sismografo, shake e la procedure deleteOldData.|
+|**Procedura**     |Si fa partire l'evento (quando si crea il database). Si inseriscono dei dati in sismografo.|
+|**Risultati attesi** |Dopo un minuto nella tabella sismografo non ci deve essere più nessun dato. |
+
+
 ### Risultati test
 
+|Test Case      | Risultato                             |
+|---------------|---------------------------------------|
+| TC-001        | <span style="color:green">Passato</span>                   |
+| TC-002        | <span style="color:gray">Non testabile, nessuna aggiunta di altri sensori</span>                   |
+| TC-003        | <span style="color:green">Passato, ma nessun invio di email</span>                   |
+| TC-004        | <span style="color:green">Passato</span>                   |
+| TC-005        | <span style="color:red">Non passato</span>                   |
+| TC-006        | <span style="color:green">Passato</span>                   |
+| TC-007        | <span style="color:green">Passato</span>                   |
+| TC-008        | <span style="color:green">Passato</span>                   |
+| TC-009        | <span style="color:green">Passato</span>                   |
+| TC-009        | <span style="color:green">Passato</span>                   |
+| TC-010        | <span style="color:green">Passato</span>                   |
+| TC-011        | <span style="color:green">Passato</span>                   |
+| TC-012        | <span style="color:green">Passato</span>                   |
+
 ### Mancanze/limitazioni conosciute
+Abbiamo avuto delle limitazioni per quando abbiamo provato a fare l'invio delle mail perchè non sapevamo come creare un server ssmtp funzionante, ci sono stati dei problemi per quando si doveva leggere il codice, non era sufficentemente commentato e questo ci ha portato dei problemi che in futuro non siamo riusciti a risolvere.
 
 ## Consuntivo
+Il Gantt ha subito leggeri cambiamenti verso la fine per dei problemi legati al database.
 ![gantt consuntivo](../GanttConsuntivo.PNG)
 
 ## Conclusioni
@@ -357,7 +507,8 @@ Nel codice del database era stata applicata una modifica che però aveva dannegg
 ### Sviluppi futuri
 Per questo progetto ci sarebbe da correggere il sito siccome possiede alcuni bug (non del tutto responsive) e poi ci sarebbe da far funzionare la parte delle mail
 ### Considerazioni personali
-
+- Alessandro
+ - Ho scelto questo progetto perchè in classe durante le lezione ne sentivo parlare e questo mi ha fatto venire voglia di capire il funzionamento del sismografo e portare dei miglioramenti per farlo funzionare meglio. Il progetto mi ha insegnato come utilizzare un raspberry e come communicare tra arduino a server, sono soddisfatto per i cambiamenti che ho portato al progetto anche se non sono funzionali al cento per cento.
 ## Bibliografia
 
 ### Sitografia
@@ -366,3 +517,5 @@ Per questo progetto ci sarebbe da correggere il sito siccome possiede alcuni bug
 
 
 ## Allegati
+- Diari
+- Codice arduino
