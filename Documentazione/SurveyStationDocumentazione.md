@@ -508,7 +508,10 @@ Il Gantt ha subito leggeri cambiamenti verso la fine per dei problemi legati al 
 Per questo progetto ci sarebbe da correggere il sito siccome possiede alcuni bug (non del tutto responsive) e poi ci sarebbe da far funzionare la parte delle mail
 ### Considerazioni personali
 - Alessandro
- - Ho scelto questo progetto perchè in classe durante le lezione ne sentivo parlare e questo mi ha fatto venire voglia di capire il funzionamento del sismografo e portare dei miglioramenti per farlo funzionare meglio. Il progetto mi ha insegnato come utilizzare un raspberry e come communicare tra arduino a server, sono soddisfatto per i cambiamenti che ho portato al progetto anche se non sono funzionali al cento per cento.
+- Ho scelto questo progetto perchè in classe durante le lezione ne sentivo parlare e questo mi ha fatto venire voglia di capire il funzionamento del sismografo e portare dei miglioramenti per farlo funzionare meglio. Il progetto mi ha insegnato come utilizzare un raspberry e come communicare tra arduino a server, sono soddisfatto per i cambiamenti che ho portato al progetto anche se non sono funzionali al cento per cento.
+
+- Luca
+- Ho scelto questo progetto perchè in confronto alle altre scelte mi sembrava il più interessante, questo progetto mi ha insegnato come utilizzare il raspberry Pi3 e come far comunicare arduino e server nonostante ho guardato poco il codice dell'arduino. Nonostante non sia riuscito a far funzionare la parte della mail sono soddisfatto del risultato del progetto.
 ## Bibliografia
 
 ### Sitografia
